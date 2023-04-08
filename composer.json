@@ -1,0 +1,15 @@
+{
+    "name": "thanos/alpha-blog",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pierre Chris Wesley",
+            "email": "pierrechriswesley@gmail.com"
+        }
+    ],
+    "require": {}
+}
