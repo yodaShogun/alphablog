@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="../../public/assets/css/style.css"></link>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.tiny.cloud/1/{your-api-key}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
       <title>Admin | New Post</title>
   </head>
   <body>
