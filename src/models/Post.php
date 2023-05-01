@@ -7,19 +7,17 @@
         private $cover;
         private $manager;
         private $title;
-        private $preview;
         private $content;
         private $publish;
         private $actived;
         private $deleted;
 
-        function __construct($ar,$ct,$cv,$mn,$tle,$prv,$cnt){
+        function __construct($ar,$ct,$cv,$mn,$tle,$cnt){
             $this->article = $ar;
             $this->category = $ct;
             $this->cover = $cv;
             $this->manager = $mn;
             $this->title = $tle;
-            $this->preview = $prv;
             $this->content = $cnt;
         } 
 
@@ -42,11 +40,7 @@
         function getTitle(){
             return $this->title;
         }
-
-        function getPreview(){
-            return $this->preview;
-        }
-
+        
         function getContent(){
             return $this->content;
         }

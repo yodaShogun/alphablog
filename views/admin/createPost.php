@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="../../public/assets/css/style.css"></link>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="https://cdn.tiny.cloud/1/{your-api-key}/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+      <script src="https://cdn.tiny.cloud/1/t8hponv3e19wmiohmz1iq7imsynz4yy9sywi1vtkmloejwf7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
       <title>Admin | New Post</title>
   </head>
   <body>
@@ -39,12 +39,8 @@
                 <input type="text" class="form-control" name="title" id="title" required>
                 </div>
                 <div class="form-group">
-                <label for="price">Resume</label>
-                <textarea class="form-control" name ="resume" id="resume" rows="3"></textarea>
-                </div>
-                <div class="form-group">
                 <label for="qty">Content</label>
-                <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+                <textarea class="form-control" name="content" id="content" columns="50" rows="50"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Choose Image:</label>
@@ -57,6 +53,7 @@
         </div>
     </div>
     <script src="../../public/assets/js/utils/script.js"></script>
+    <script src="../../public/assets/js/utils/typepost.js"></script>
     <script src="../../public/assets/js/addpost.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>

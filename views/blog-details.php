@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../public/assets/css/main.css"> 
 		<noscript><link rel="stylesheet" href="../public/assets/css/noscript.css" /></noscript>
+		<script src="https://cdn.tiny.cloud/1/t8hponv3e19wmiohmz1iq7imsynz4yy9sywi1vtkmloejwf7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 		<title>AlphaAcademyHT</title>
 	</head>
 	<body class="is-preload">
@@ -46,14 +47,12 @@
 										<h1><?=$details->title?></h1>
 										<h4><i class="fa fa-user"></i> <?=$details->fname?> <?=$details->lname?> &nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-calendar"></i> <?=$details->publish_date?>   &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-eye"></i> 114</h4>
 									</header>
-									<span class="image main"><img src="<?=$details->cover?>" alt="" /></span>
-									<p class="text-justify"><?=$details->content?></p>
+									<span class="image main"><img src="../public/uploads/blog/<?=$details->title?>/<?=$details->cover?>" alt="" /></span>
+									<?php echo html_entity_decode($details->content); ?>
 								</div>
 							</section>
-						<?php }?>
-						
+						<?php }?>	
 					</div>
-
 					<section id="contact">
 						<div class="inner">
 							<section>
@@ -128,6 +127,6 @@
 
 		<!-- Scripts -->
 		<?php require './includes/script.php' ?>
-
+		<script src="../public/assets/js/utils/readpost.js"></script>
 	</body>
 </html>

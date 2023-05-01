@@ -1,9 +1,8 @@
 <?php
-
 	require '../vendor/autoload.php';
 	use src\data\PostDao;
 	$articleDao = new PostDao();
-	$blogQuery = $articleDao->readPosts();
+	$blogQuery = $articleDao->recentsPosts();
 ?>
 
 <!DOCTYPE HTML>
@@ -68,17 +67,17 @@
 								<?php while($blog = $blogQuery->FETCH(PDO::FETCH_OBJ)) { ?> 
 									<article>
 										<span class="image">
-											<img src="<?=$blog->cover?>" alt="" />
+											<img src="../public/uploads/blog/<?=$blog->title?>/<?=$blog->cover?>" alt="" />
 										</span>
 										<header class="major">
-										<h3><?=$blog->title?></h3>
+											<h3><?=$blog->title?></h3>
 
-										<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> | <span>0</span></p>
+											<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> | <span>0</span></p>
 
-										<div class="major-actions">
-											<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly">Read Blog</a>
-										</div>
-									</header>
+											<div class="major-actions">
+												<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly">Read Blog</a>
+											</div>
+										</header>
 									</article>
 								<?php } ?>
 							</section>

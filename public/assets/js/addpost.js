@@ -2,10 +2,11 @@ $(document).ready(()=>{
     
     $('#add-post').submit((e)=>{
         e.preventDefault()
-        let dataArticle = $('#add-post')[0]
-        let formArticle = new FormData(dataArticle)
-        formArticle.append('cover',$('#cover').prop('files')[0])
-
+        let dataArticle = $("#add-post")[0]
+        let articleForm = new FormData(dataArticle)
+        articleForm.append('content',tinyMCE.get("content").getContent({format : 'html'}))
+        articleForm.append('cover',$("#cover").prop("files")[0])
+        
         $.ajax({
             url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
             type:"POST",
@@ -13,7 +14,7 @@ $(document).ready(()=>{
             cache: false,
             contentType: false,
             processData: false,
-            data: formArticle,
+            data: articleForm,
             success:function(data){
                 console.log(data);
                 let reponse = JSON.parse(data);

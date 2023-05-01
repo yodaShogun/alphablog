@@ -1,6 +1,8 @@
 <?php
 	require '../vendor/autoload.php';
-	
+	use src\data\PostDao;
+	$articleDao = new PostDao();
+	$blogQuery = $articleDao->allPosts();
 ?>
 
 <!DOCTYPE HTML>
@@ -42,90 +44,22 @@
 
 						<!-- Blog posts -->
 						<section class="tiles">
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-1-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
+							<?php while($blog = $blogQuery->FETCH(PDO::FETCH_OBJ)) { ?> 
+								<article>
+									<span class="image">
+										<img src="../public/uploads/blog/<?=$blog->title?>/<?=$blog->cover?>" alt="" />
+									</span>
+									<header class="major">
+										<h3><?=$blog->title?></h3>
 
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
+										<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> | <span>0</span></p>
 
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-2-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
-
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-3-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
-
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-4-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
-
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-5-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
-
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../public/images/blog-6-720x480.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-									<p>John Doe  &nbsp;/&nbsp;  12/06/2020 10:30  &nbsp;/&nbsp;  114</p>
-
-									<div class="major-actions">
-										<a href="blog-details.php" class="button small next">Read Blog</a>
-									</div>
-								</header>
-							</article>
+										<div class="major-actions">
+											<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly">Read Blog</a>
+										</div>
+									</header>
+								</article>
+							<?php } ?>
 						</section>
 					</div>
 

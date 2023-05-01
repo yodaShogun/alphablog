@@ -15,16 +15,16 @@
         }
 
         function createPost(Post $post){
-            $createPostStmt = "INSERT INTO articles(article, category, cover, manager, title, preview, content) VALUES (?,?,?,?,?,?,?)";
+            $createPostStmt = "INSERT INTO articles(article, category, cover, manager,title,content) VALUES (?,?,?,?,?,?)";
             $createPostQuery = $this->dbInit->prepare($createPostStmt);
-            $createPostQuery->execute([$post->getArticle(),$post->getCategory(),$post->getCover(),$post->getManager(),$post->getTitle(),$post->getPreview(),$post->getContent()]);
+            $createPostQuery->execute([$post->getArticle(),$post->getCategory(),$post->getCover(),$post->getManager(),$post->getTitle(),$post->getContent()]);
             if($createPostQuery)
                 return $createPostQuery;
             $this->dbInit->close();
         }
 
         function readManagerPost($mn){
-            $readPostStmt = "SELECT article, category, cover, title, preview, publish_date, actived, deleted FROM articles WHERE manager = ?";
+            $readPostStmt = "SELECT article, cover, title, publish_date, actived, deleted FROM articles WHERE manager = ?";
             $readPostQuery = $this->dbInit->prepare($readPostStmt);
             $readPostQuery->execute([$mn]);
             if($readPostQuery)
@@ -32,8 +32,16 @@
             $this->dbInit->close();
         } 
 
-        function readPosts(){
-            $allPostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager";
+        function recentsPosts(){
+            $recentPostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager WHERE actived = 1 AND deleted = 0 ORDER BY article DESC LIMIT 6";
+            $recentPostQuery = $this->dbInit->query($recentPostStmt);
+            if($recentPostQuery)
+                return $recentPostQuery;
+            $this->dbInit->close();
+        } 
+
+        function allPosts(){
+            $allPostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager WHERE actived = 1 AND deleted = 0 ORDER BY article DESC";
             $allPostQuery = $this->dbInit->query($allPostStmt);
             if($allPostQuery)
                 return $allPostQuery;
@@ -49,10 +57,10 @@
             $this->dbInit->close();
         }
 
-        function updatePost($cat,$cover,$title,$preview,$content,$article){
-            $updatePostStmt = "UPDATE articles SET category=?, cover=?, title=?, preview=?, content=? WHERE article = ? ";
+        function updatePost($cat,$cover,$title,$content,$article){
+            $updatePostStmt = "UPDATE articles SET category=?, cover=?, title=?, content=? WHERE article = ? ";
             $updatePostQuery = $this->dbInit->prepare($updatePostStmt);
-            $updatePostQuery->execute([$cat,$cover,$title,$preview,$content,$article]);
+            $updatePostQuery->execute([$cat,$cover,$title,$content,$article]);
             if($updatePostQuery)
                 return $updatePostQuery;
             $this->dbInit->close();

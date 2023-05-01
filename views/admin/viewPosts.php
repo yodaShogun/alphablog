@@ -30,6 +30,9 @@
               <th class="text-center" colspan="2">Action</th>
             </tr>
           </thead>
+          <tbody>
+            
+          </tbody>
         </table>
 
         <!-- Trigger a new page -->
