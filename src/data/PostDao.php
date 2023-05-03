@@ -75,6 +75,15 @@
             $this->dbInit->close();
         }
 
+        function unPublishPost($post){
+            $publishDateStmt = "UPDATE articles SET publish_date=?,actived=? WHERE article = ?";
+            $publishDateQuery = $this->dbInit->prepare($publishDateStmt);
+            $publishDateQuery->execute([date("Y-m-d"),0,$post]);
+            if($publishDateQuery)
+                return $publishDateQuery;
+            $this->dbInit->close();
+        }
+
         function deletePost($post){
             $delPostStmt = "UPDATE articles SET actived=?, deleted=? WHERE article = ?";
             $delPostQuery = $this->dbInit->prepare($delPostStmt);
