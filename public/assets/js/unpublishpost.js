@@ -1,12 +1,11 @@
 $(document).ready(() => {
-	$('#postTable tbody').on('click', '.unpublish', function (e)
-	{
+	$('#postTable tbody').on('click', '.unpublish', function (e){
 		e.preventDefault();
 		let data = $(this).attr('href');
 		swal(
 		{
 			title: "Confirmation",
-			text: "Mettre Au Bouillon?",
+			text: "Retirer Cet Article?",
 			icon: "warning",
 			buttons: true,
 			dangerMode: true,

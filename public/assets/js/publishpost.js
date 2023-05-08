@@ -1,12 +1,11 @@
 $(document).ready(() => {
-	$('#postTable tbody').on('click', '.publish', function (e)
-	{
+	$('#tbody a').on('click', function (e){
 		e.preventDefault();
+		alert('Inserted')
 		let data = $(this).attr('href');
-		swal(
-		{
+		swal({
 			title: "Confirmation",
-			text: "Etes vous sur de vouloir publier ce produit?",
+			text: "Publier Ce Article?",
 			icon: "warning",
 			buttons: true,
 			dangerMode: true,
