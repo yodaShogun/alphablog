@@ -1,7 +1,6 @@
 $(document).ready(() => {
-	$('#tbody a').on('click', function (e){
-		e.preventDefault();
-		alert('Inserted')
+	$('#tbody .publish').on('click', function (e){
+		e.preventDefault()
 		let data = $(this).attr('href');
 		swal({
 			title: "Confirmation",

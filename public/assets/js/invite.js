@@ -1,13 +1,11 @@
 $(document).ready(()=>{
     
-    $('#add-post').submit((e)=>{
+    $('#members').submit((e)=>{
         e.preventDefault()
-        let dataArticle = $("#add-post")[0]
+        let dataArticle = $("#members")[0]
         let articleForm = new FormData(dataArticle)
-        articleForm.append('cover',$("#cover").prop("files")[0])
-        
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
+            url:"http://localhost/alphablog/src/controllers/invite.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,
@@ -18,7 +16,7 @@ $(document).ready(()=>{
                 console.log(data);
                 let reponse = JSON.parse(data);
                 if (reponse.status === true) {
-                    $("#add-post")[0].reset();
+                    $("#members")[0].reset();
                     Toastify({
                         text: reponse.message,
                         duration: 3000,

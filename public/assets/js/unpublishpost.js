@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	$('#postTable tbody').on('click', '.unpublish', function (e){
+	$('#tbody .unpublish').on('click', function (e){
 		e.preventDefault();
 		let data = $(this).attr('href');
 		swal(

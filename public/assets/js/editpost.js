@@ -1,9 +1,10 @@
 $(document).ready(()=>{
     
-    $('#add-post').submit((e)=>{
+    $('#edit-post').submit((e)=>{
         e.preventDefault()
-        let dataArticle = $("#add-post")[0]
+        let dataArticle = $("#edit-post")[0]
         let articleForm = new FormData(dataArticle)
+        
         articleForm.append('cover',$("#cover").prop("files")[0])
         
         $.ajax({

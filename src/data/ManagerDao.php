@@ -21,8 +21,8 @@
         } 
 
         function countEmail($mail){
-            $countMailStmt = "SELECT COUNT(*) FROM manager WHERE email=?";
-            $countMailQuery = $this->dbInit->preare($countMailStmt);
+            $countMailStmt = "SELECT COUNT(*) FROM managers WHERE email=?";
+            $countMailQuery = $this->dbInit->prepare($countMailStmt);
             $countMailQuery->execute([$mail]);
             if($countMailQuery) return $countMailQuery;
         } 

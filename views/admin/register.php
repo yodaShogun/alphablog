@@ -1,8 +1,12 @@
 <?php 
     require '../../vendor/autoload.php';
+    date_default_timezone_set('America/Port-au-Prince');
     use src\data\CategoryDao;
     $daoCategory = new CategoryDao();
     $categoryRows = $daoCategory->listCategory();
+
+    $timeDecoded = urldecode(base64_decode($_GET['time']));
+    $currentTime = date("Y-m-d H:i:s");
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/super-build/ckeditor.js"></script>
-      <title>Admin | New Post</title>
+      <title>User Registration</title>
   </head>
   <body>
     <?php
@@ -22,35 +26,28 @@
         include "./includes/sidebar.php";
     ?>
     <div id="main-content" class="container allContent-section py-4">
-        <h2>New Post</h2>
-        <div>
-            <form id="add-post" enctype='multipart/form-data'  method="POST">
-                <div class="form-group">
-                <label>Category:</label>
-                <select name ="category" id="category" >
-                    <option disabled selected>Select category</option>
-                    <?php while($element = $categoryRows->FETCH(PDO::FETCH_OBJ)) {?>
-                        <option value="<?=$element->category?>"><?=$element->title?></option>
-                    <?php }?>
-                </select>
-                </div>
-                <div class="form-group">
-                <label for="name">Title</label>
-                <input type="text" class="form-control" name="title" id="title" required>
-                </div>
-                <div class="form-group">
-                <label for="qty">Content</label>
-                <textarea class="form-control" name="content" id="content" columns="50" rows="50"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="file">Choose Image:</label>
-                    <input type="file" class="form-control-file" name="cover" id="cover" accept=".jpg,.png">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Save</button>
-                </div>
-            </form>
-        </div>
+        <?php if($currentTime > $timeDecoded) {?>
+            <div> 
+               <h1>Invitation Link Expired Asked To Another Link</h1>
+            </div>
+        <?php } else { ?>
+            <h2>New Members</h2>
+            <div>
+                <form id="add-post" enctype='multipart/form-data'  method="POST">
+                    <div class="form-group">
+                        <label for="name">Task</label>
+                        <input type="text" value ="<?=$_GET['job']?>" class="form-control" name="task" id="task" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Choose Image:</label>
+                        <input type="file" class="form-control-file" name="cover" id="cover" accept=".jpg,.png">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Save</button>
+                    </div>
+                </form>
+            </div>
+        <?php } ?>
     </div>
     <script src="../../public/assets/js/utils/script.js"></script>
     <script src="../../public/assets/js/utils/editor.js"></script>

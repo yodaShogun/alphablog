@@ -27,7 +27,7 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <i class="fa fa-users  mb-2" style="font-size: 70px;"></i>
-                        <h4 style="color:white;">Users</h4>
+                        <h4 style="color:white;">Editors</h4>
                         <h5 style="color:white;">0</h5>
                     </div>
                 </div>
@@ -40,15 +40,15 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="card">
-                            <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
-                            <h4 style="color:white;">Products</h4>
+                            <i class="fa fa-th-list mb-2" style="font-size: 70px;"></i>
+                            <h4 style="color:white;">Posts</h4>
                             <h5 style="color:white;">0</h5>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card">
-                        <i class="fa fa-list mb-2" style="font-size: 70px;"></i>
-                        <h4 style="color:white;">Orders</h4>
+                        <i class="fa fa-th-list mb-2" aria-hidden="true" style="font-size: 70px;"></i>
+                        <h4 style="color:white;">MyPosts</h4>
                         <h5 style="color:white;">0</h5>
                     </div>
                 </div>
