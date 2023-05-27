@@ -1,24 +1,24 @@
 $(document).ready(()=>{
     
-    $('#add-post').submit((e)=>{
+    $('#register-form').submit((e)=>{
         e.preventDefault()
-        let registrationData = $("#add-post")[0]
+        let registrationData = $("#register-form")[0]
         let registrationForm = new FormData(registrationData)
-        registrationForm.append('cover',$("#cover").prop("files")[0])
+        registrationForm.append('profile',$("#profile").prop("files")[0])
         
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
+            url:"http://localhost/alphablog/src/controllers/userRegistration.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,
             contentType: false,
             processData: false,
-            data: articleForm,
+            data: registrationForm,
             success:function(data){
                 console.log(data);
                 let reponse = JSON.parse(data);
                 if (reponse.status === true) {
-                    $("#add-post")[0].reset();
+                    $("#register-form")[0].reset();
                     Toastify({
                         text: reponse.message,
                         duration: 3000,

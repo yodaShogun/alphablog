@@ -14,9 +14,9 @@
         }
 
         function createManager(Manager $manager){
-            $createStmt = "INSERT INTO managers(`manager`, `task`,`fname`, `lname`, `email`, `pswd`) VALUES (?,?,?,?,?,?)";
+            $createStmt = "INSERT INTO managers(`manager`, `profile`,`task`,`fname`, `lname`, `email`, `pswd`) VALUES (?,?,?,?,?,?,?)";
             $createQuery = $this->dbInit->prepare($createStmt);
-            $createQuery->execute([$manager->getNo(),$manager->getTask(),$manager->getFname(), $manager->getLname(),$manager->getEmail(),$manager->getPassword()]);
+            $createQuery->execute([$manager->getNo(),$manager->getProfile(),$manager->getTask(),$manager->getFname(), $manager->getLname(),$manager->getEmail(),$manager->getPassword()]);
             if($createQuery) return $createQuery;
         } 
 

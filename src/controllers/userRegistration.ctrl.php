@@ -11,28 +11,42 @@
         
         extract($_POST);
 
-        $directory = "../../public/uploads/blog/$title";
+        $directory = "../../public/uploads/teams/".str_replace(' ','',htmlspecialchars($name));
 
-        $value = htmlspecialchars($content);
-
-        if(!is_dir($directory)){
-            mkdir($directory,0777,true);
-            if(isset($_FILES['cover'])){
-                $cover = fileImages($directory,$_FILES['cover']);
-                $newPost =  new Manager(null,htmlspecialchars($category),$cover,1,htmlspecialchars($title),$value);
-                if($daoPost->createPost($newPost))
-                    $response = ['status'=>true,"message"=>'Post Succesfully Created'];
-                else
-                    $response = ['status'=>false,"message"=>'Creation Failed'];
-            }
-            else
-                $response = ['status'=>false,"message"=>'Files Issues'];
-        }
-        else
-            $response = ['status'=>false,"message"=>'Files Exists'];
+        $task = (int) htmlspecialchars($task);
+        $name = explode(' ',htmlspecialchars($name));
+        $email = htmlspecialchars($email);
+        $pass = htmlspecialchars($pass);
+        $re_pass = htmlspecialchars($re_pass);
+        if(filter_var($email,FILTER_VALIDATE_EMAIL)){
+            if($pass == $re_pass){
+                if(strlen($pass)>=8){
+                    if(!is_dir($directory)){
+                        mkdir($directory,0777,true);
+                        if(isset($_FILES['profile'])){
+                            $profile = fileImages($directory,$_FILES['profile']);
+                            $newManager =  new Manager(null,$profile,$task,$name[0],$name[1],$email,password_hash($pass,PASSWORD_DEFAULT));
+                            if($registerInstance->createManager($newManager))
+                                $response = ['status'=>true,"message"=>'Registration Succesfull'];
+                            else
+                                $response = ['status'=>false,"message"=>'Registration Failed'];
+                        }
+                        else
+                            $response = ['status'=>false,"message"=>'Files Issues'];
+                    }
+                    else
+                        $response = ['status'=>false,"message"=>'Files Exists'];
+                }else
+                    $response = ['status'=>false, "message"=>"Too Short Password"];
+            }else
+                $response = ['status'=>false, "message"=>"Password Don't Match"];
+        }else
+            $response = ['status'=>false, "message"=>"Non Valide Email"];
+        
     } 
 
     echo json_encode($response);
+
 
     function fileImages($folder, $content){
 

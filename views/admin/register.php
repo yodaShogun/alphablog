@@ -17,6 +17,7 @@
       <link rel="stylesheet" href="../../public/assets/fonts/material-icon/css/material-design-iconic-font.min.css">
       <link rel="stylesheet" href="../../public/assets/css/registerform.css"></link>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <title>User Registration</title>
   </head>
   <body>
@@ -35,6 +36,10 @@
                                 <h2 class="form-title">Sign up</h2>
                                 <form method="POST" class="register-form" id="register-form">
                                     <div class="form-group">
+                                        <label for="task"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                        <input type="text" name="task" id="task" value="1" required/>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                         <input type="text" name="name" id="name" placeholder="Your Name" required/>
                                     </div>
@@ -51,8 +56,8 @@
                                         <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="re-pass"><i class="zmdi zmdi-file"></i></label>
-                                        <input type="file" name="profile" id="profile" required/>
+                                        <label for="profile"><i class="zmdi zmdi-file"></i></label>
+                                        <input type="file" name="profile" id="profile" accept=".jpg, .png" required/>
                                     </div>
                                     <!-- <div class="form-group">
                                         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
@@ -71,11 +76,8 @@
                 </section>
             </div>
         <?php ?>
-    <script src="../../public/assets/js/utils/script.js"></script>
     <script src="../../public/assets/js/register.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>
