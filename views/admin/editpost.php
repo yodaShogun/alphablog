@@ -25,6 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/super-build/ckeditor.js"></script>
 </head>
 <body>
     <?php
@@ -50,7 +51,7 @@
                 </div>
                 <div class="form-group">
                 <label for="qty">Content</label>
-                <textarea class="form-control" name="content" id="content" columns="50" rows="50" required><?=$dataPostQuery->getContent()?></textarea>
+                <textarea class="form-control" name="content" id="editor" columns="50" rows="50" required><?=$dataPostQuery->getContent()?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Choose Image:</label>
@@ -65,7 +66,6 @@
     <script src="../../public/assets/js/utils/script.js"></script>
     <script src="../../public/assets/js/utils/editor.js"></script>
     <script src="../../public/assets/js/editpost.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/super-build/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>

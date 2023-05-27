@@ -5,12 +5,17 @@
     use src\data\ManagerDao;
 
     $response = []; 
-    $daoManager = new ManagerDao();
+    $loginInstance = new ManagerDao();
 
     if(isset($_POST)){
         extract($_POST);
+        $address = htmlspecialchars($addr);
+        $secret = htmlspecialchars($srt);
 
-        $response = ['status'=>true, 'message'=>$mail.$secret];
+        if($loginInstance->authentificate($address,$secret))
+            $response = ['status'=>true, "message"=>"Welcome"];
+        else
+            $response = ['status'=>false, "message"=>"Incorrect Password or Email"]; 
     }
 
     echo json_encode($response);

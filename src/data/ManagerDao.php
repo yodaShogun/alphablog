@@ -32,5 +32,16 @@
             $taskQuery = $this->dbInit->query($taskStmt);
             if($taskQuery) return $taskQuery;
         }
+
+        function authentificate($address,$key){
+            $authStmt = "SELECT pswd FROM managers WHERE email = ?";
+            $authQuery = $this->dbInit->prepare($authStmt);
+            $authQuery->execute([$address]);
+            $authResponse = $authQuery->fetch();
+            if(password_verify($key,$authResponse['pswd']))
+                return true;
+            else
+                return false;
+        }
     }
     
