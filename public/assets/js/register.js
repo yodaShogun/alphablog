@@ -2,9 +2,9 @@ $(document).ready(()=>{
     
     $('#add-post').submit((e)=>{
         e.preventDefault()
-        let dataArticle = $("#add-post")[0]
-        let articleForm = new FormData(dataArticle)
-        articleForm.append('cover',$("#cover").prop("files")[0])
+        let registrationData = $("#add-post")[0]
+        let registrationForm = new FormData(registrationData)
+        registrationForm.append('cover',$("#cover").prop("files")[0])
         
         $.ajax({
             url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
@@ -30,6 +30,7 @@ $(document).ready(()=>{
                         background: "linear-gradient(to right, #00b09b, #96c93d)",
                         },
                     }).showToast();
+                    window.location.replace("http://localhost/alphablog/views/admin/login.php")
                 } else {
                     Toastify({
                         text: reponse.message,

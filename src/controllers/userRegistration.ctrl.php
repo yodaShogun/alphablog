@@ -1,11 +1,11 @@
 <?php 
     require '../../vendor/autoload.php';
 
-    use src\models\Post;
-    use src\data\PostDao;
+    use src\models\Manager;
+    use src\data\ManagerDao;
 
     $response  = [];
-    $daoPost = new PostDao();
+    $registerInstance = new ManagerDao();
 
     if(isset($_POST)){
         
@@ -19,7 +19,7 @@
             mkdir($directory,0777,true);
             if(isset($_FILES['cover'])){
                 $cover = fileImages($directory,$_FILES['cover']);
-                $newPost =  new Post(null,htmlspecialchars($category),$cover,1,htmlspecialchars($title),$value);
+                $newPost =  new Manager(null,htmlspecialchars($category),$cover,1,htmlspecialchars($title),$value);
                 if($daoPost->createPost($newPost))
                     $response = ['status'=>true,"message"=>'Post Succesfully Created'];
                 else

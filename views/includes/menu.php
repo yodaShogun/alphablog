@@ -10,6 +10,6 @@
 
         <li> <a href="contact.php">Contact Us</a> </li>
 
-        <li> <a href="login.php"> SignIn </a> </li>
+        <li> <a href="./login.php"> SignIn </a> </li>
     </ul>
 </nav>
