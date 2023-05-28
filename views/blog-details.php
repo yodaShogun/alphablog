@@ -1,7 +1,5 @@
 <?php
 	require '../vendor/autoload.php';
-	
-	require '../vendor/autoload.php';
 	use src\data\PostDao;
 	$articleDao = new PostDao();
 	if(isset($_GET['id']) && $_GET['id']!=null)

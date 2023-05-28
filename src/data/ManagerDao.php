@@ -43,5 +43,15 @@
             else
                 return false;
         }
+
+        function getSessionInfo($address){
+            $sessionStmt = "SELECT m.manager, m.fname, m.lname, ts.task_desc FROM managers m JOIN tasks ts ON ts.task = m.task WHERE m.email = ? ";
+            $sessionQuery = $this->dbInit->prepare($sessionStmt);
+            $sessionQuery->execute([$address]);
+            if($sessionQuery)
+                return $sessionQuery;
+        }
+
+
     }
     
