@@ -1,8 +1,9 @@
 <?php 
+  session_start();
   require '../../vendor/autoload.php';
   use src\data\PostDao;
   $post = new PostDao();
-  $postListQuery = $post->readManagerPost(1);
+  $postListQuery = $post->readManagerPost($_SESSION['user']['id']);
 
 ?>
 <!DOCTYPE html>

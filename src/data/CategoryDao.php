@@ -23,10 +23,10 @@
         } 
 
         function countCategory(){
-            $countStmt = "SELECT COUNT(*) as catrows FROM categories";
+            $countStmt = "SELECT COUNT(*) as cats FROM categories";
             $countQuery = $this->dbInit->query($countStmt);
             while($countQueryResult = $countQuery->fetch()){
-                return $countQueryResult['catrows'];
+                return $countQueryResult['cats'];
             } 
             $this->dbInit->close();   
         }

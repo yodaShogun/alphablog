@@ -37,7 +37,7 @@
                                 <form method="POST" class="register-form" id="register-form">
                                     <div class="form-group">
                                         <label for="task"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                        <input type="text" name="task" id="task" value="1" required/>
+                                        <input hidden type="text" name="task" id="task" value="<?=$_GET['job']?>" required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>

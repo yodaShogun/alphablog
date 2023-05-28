@@ -2,8 +2,12 @@
     session_start();
     require '../../vendor/autoload.php';
     use src\data\CategoryDao;
+    use src\data\PostDao;
     $daoCategory = new CategoryDao();
+    $postInstance = new PostDao();
     $categoryRows = $daoCategory->countCategory();
+    $postRows = $postInstance->countAllPost();
+    $myPost = $postInstance->countMyPost($_SESSION['user']['id']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,38 +27,50 @@
             include "./includes/sidebar.php";
         ?>
 
-        <div id="main-content" class="container allContent-section py-4">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <i class="fa fa-users  mb-2" style="font-size: 70px;"></i>
-                        <h4 style="color:white;">Editors</h4>
-                        <h5 style="color:white;">0</h5>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <i class="fa fa-th-large mb-2" style="font-size: 70px;"></i>
-                        <h4 style="color:white;">Categories</h4>
-                        <h5 style="color:white;"><?=$categoryRows?></h5>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                            <i class="fa fa-th-list mb-2" style="font-size: 70px;"></i>
-                            <h4 style="color:white;">Posts</h4>
+        <?php if($_SESSION['user']['role'] == 'admin') {?>
+
+            <div id="main-content" class="container allContent-section py-4">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <i class="fa fa-users  mb-2" style="font-size: 70px;"></i>
+                            <h4 style="color:white;">Editors</h4>
                             <h5 style="color:white;">0</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <i class="fa fa-th-list mb-2" aria-hidden="true" style="font-size: 70px;"></i>
-                        <h4 style="color:white;">MyPosts</h4>
-                        <h5 style="color:white;">0</h5>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <i class="fa fa-th-large mb-2" style="font-size: 70px;"></i>
+                            <h4 style="color:white;">Categories</h4>
+                            <h5 style="color:white;"><?=$categoryRows?></h5>
+                        </div>
                     </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <i class="fa fa-th-list mb-2" aria-hidden="true" style="font-size: 70px;"></i>
+                            <h4 style="color:white;">MyPosts</h4>
+                            <h5 style="color:white;"><?=$myPost?></h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                                <i class="fa fa-th-list mb-2" style="font-size: 70px;"></i>
+                                <h4 style="color:white;">Posts</h4>
+                                <h5 style="color:white;"><?=$postRows?></h5>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+        <?php } else { ?>
+            <div class="col-sm-3">
+                <div class="card">
+                    <i class="fa fa-th-list mb-2" aria-hidden="true" style="font-size: 70px;"></i>
+                    <h4 style="color:white;">MyPosts</h4>
+                    <h5 style="color:white;"><?=$myPost?></h5>
                 </div>
-            </div> 
-        </div>
+            </div>
+        <?php } ?>
   
         <script type="text/javascript" src="../../public/assets/js/utils/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

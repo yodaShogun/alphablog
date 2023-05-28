@@ -49,11 +49,11 @@
         }
         
         function readOnePosts($article){
-            $allPostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager and article = ?";
-            $allPostQuery = $this->dbInit->prepare($allPostStmt);
-            $allPostQuery->execute([$article]);
-            if($allPostQuery)
-                return $allPostQuery;
+            $onePostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager and article = ?";
+            $onePostQuery = $this->dbInit->prepare($onePostStmt);
+            $onePostQuery->execute([$article]);
+            if($onePostQuery)
+                return $onePostQuery;
             $this->dbInit->close();
         }
 
@@ -90,6 +90,25 @@
             $delPostQuery->execute([0,1,$post]);
             if($delPostQuery)
                 return $delPostQuery;
+            $this->dbInit->close();
+        } 
+
+        function countAllPost(){
+            $countAllStmt = "SELECT COUNT(*) as allpost FROM articles";
+            $countAllQuery = $this->dbInit->query($countAllStmt);
+            while($countAllQueryResult = $countAllQuery->fetch()){
+                return $countAllQueryResult['allpost'];
+            } 
+            $this->dbInit->close();
+        }
+
+        function countMyPost($userID){
+            $countStmt = "SELECT COUNT(*) as myposts FROM articles JOIN managers WHERE managers.manager = articles.article AND managers.manager = ?";
+            $countQuery = $this->dbInit->prepare($countStmt);
+            $countQuery->execute([$userID]);
+            while($countQueryResult = $countQuery->fetch()){
+                return $countQueryResult['myposts'];
+            } 
             $this->dbInit->close();
         }
     }

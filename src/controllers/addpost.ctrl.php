@@ -1,6 +1,6 @@
 <?php 
+    session_start();
     require '../../vendor/autoload.php';
-
     use src\models\Post;
     use src\data\PostDao;
 
@@ -19,7 +19,7 @@
             mkdir($directory,0777,true);
             if(isset($_FILES['cover'])){
                 $cover = fileImages($directory,$_FILES['cover']);
-                $newPost =  new Post(null,htmlspecialchars($category),$cover,1,htmlspecialchars($title),$value);
+                $newPost =  new Post(null,htmlspecialchars($category),$cover,$_SESSION['user']['id'],htmlspecialchars($title),$value);
                 if($daoPost->createPost($newPost))
                     $response = ['status'=>true,"message"=>'Post Succesfully Created'];
                 else
