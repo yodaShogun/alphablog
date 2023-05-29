@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require_once './secure/connected.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

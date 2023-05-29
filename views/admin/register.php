@@ -7,6 +7,9 @@
 
     $timeDecoded = urldecode(base64_decode($_GET['time']));
     $currentTime = date("Y-m-d H:i:s");
+
+    if(!isset($_GET['job']))
+        header('location: https://google.com')
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,11 +25,11 @@
   </head>
   <body>
     
-        <!-- <?php //if($currentTime > $timeDecoded) {?>
+        <?php if($currentTime > $timeDecoded) {?>
             <div> 
                <h1>Invitation Link Expired Asked To Another Link</h1>
             </div>
-        <?php //} ?> -->
+        <?php } ?> 
             <div class="main">
                 <!-- Sign up form -->
                 <section class="signup">

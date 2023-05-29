@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require '../../vendor/autoload.php';
+    require '../secure/disconnected.php';
     use src\data\CategoryDao;
     $daoCategory = new CategoryDao();
     $categoryRows = $daoCategory->listCategory();

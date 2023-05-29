@@ -1,7 +1,7 @@
 <?php
     session_start();
     require '../../vendor/autoload.php';
-
+    require '../secure/disconnected.php';
     use src\data\ManagerDao;
     $instance = new ManagerDao();
 

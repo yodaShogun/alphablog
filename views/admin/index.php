@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require '../../vendor/autoload.php';
+    require '../secure/disconnected.php';
     use src\data\CategoryDao;
     use src\data\PostDao;
     $daoCategory = new CategoryDao();
