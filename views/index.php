@@ -74,7 +74,7 @@
 											<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> </p>
 
 											<div class="major-actions">
-												<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly">Read Blog</a>
+												<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly"> More </a>
 											</div>
 										</header>
 									</article>

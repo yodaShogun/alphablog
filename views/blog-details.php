@@ -43,7 +43,7 @@
 								<div class="inner">
 									<header class="major">
 										<h1><?=$details->title?></h1>
-										<h4><i class="fa fa-user"></i> <?=$details->fname?> <?=$details->lname?> &nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-calendar"></i> <?=$details->publish_date?>   &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-eye"></i> 114</h4>
+										<h4><i class="fa fa-user"></i> <?=$details->fname?> <?=$details->lname?> &nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-calendar"></i> <?=$details->publish_date?>   &nbsp;&nbsp;&nbsp;&nbsp;</h4>
 									</header>
 									<span class="image main"><img src="../public/uploads/blog/<?= $details->title?>/<?=$details->cover?>" alt="" /></span>
 									<div style="background-color: #E2A020;">
