@@ -33,7 +33,7 @@
         } 
 
         function recentsPosts(){
-            $recentPostStmt = "SELECT *, fname, lname FROM articles JOIN managers ON articles.manager = managers.manager WHERE actived = 1 AND deleted = 0 ORDER BY article DESC LIMIT 6";
+            $recentPostStmt = "SELECT a.*, m.fname, m.lname FROM articles a JOIN managers m ON a.manager = m.manager WHERE a.actived = 1 AND a.deleted = 0 ORDER BY a.article DESC LIMIT 6";
             $recentPostQuery = $this->dbInit->query($recentPostStmt);
             if($recentPostQuery)
                 return $recentPostQuery;

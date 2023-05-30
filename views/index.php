@@ -63,16 +63,15 @@
 
 							<!-- Blog Posts -->
 							<section class="tiles">
-
 								<?php while($blog = $blogQuery->FETCH(PDO::FETCH_OBJ)) { ?> 
 									<article>
-										<span class="image">
-											<img src="../public/uploads/blog/<?=$blog->title?>/<?=$blog->cover?>" alt="" />
+										<span class="image"> 
+											<img src="../public/uploads/blog/<?=$blog->title?>/<?=$blog->cover?>" alt=""/> 
 										</span>
 										<header class="major">
 											<h3><?=$blog->title?></h3>
 
-											<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> | <span>0</span></p>
+											<p><br> <span><?=$blog->fname?> <?=$blog->lname?></span> | <span><?=$blog->publish_date?></span> </p>
 
 											<div class="major-actions">
 												<a href="blog-details.php?id=<?=$blog->article?>" target="_blank" class="button small next scrolly">Read Blog</a>
