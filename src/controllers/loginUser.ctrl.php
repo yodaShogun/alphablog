@@ -18,8 +18,9 @@
 
             while($dataSession = $sessionData->FETCH(PDO::FETCH_OBJ)){
                 $_SESSION['user']['id'] = $dataSession->manager;
-                $_SESSION['user']['name'] = $dataSession->fname.' '.$dataSession->lname;
+                $_SESSION['user']['name'] = $dataSession->fname." ".$dataSession->lname;
                 $_SESSION['user']['role'] = $dataSession->task_desc;
+                $_SESSION['user']['profile'] = $dataSession->profile;
 
             }
             $response = ['status'=>true, "message"=>"Welcome ".$_SESSION['user']['name']];

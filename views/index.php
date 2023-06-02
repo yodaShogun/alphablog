@@ -65,9 +65,9 @@
 							<section class="tiles">
 								<?php while($blog = $blogQuery->FETCH(PDO::FETCH_OBJ)) { ?> 
 									<article>
-										<span class="image"> 
+										<strong class="image"> 
 											<img src="../public/uploads/blog/<?=$blog->title?>/<?=$blog->cover?>" alt=""/> 
-										</span>
+										</strong>
 										<header class="major">
 											<h3><?=$blog->title?></h3>
 

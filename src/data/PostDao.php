@@ -57,10 +57,10 @@
             $this->dbInit->close();
         }
 
-        function updatePost($cat,$cover,$title,$content,$article){
-            $updatePostStmt = "UPDATE articles SET category=?, cover=?, title=?, content=? WHERE article = ? ";
+        function updatePost($cat,$title,$content,$article){
+            $updatePostStmt = "UPDATE articles SET category=?, title=?, content=? WHERE article = ? ";
             $updatePostQuery = $this->dbInit->prepare($updatePostStmt);
-            $updatePostQuery->execute([$cat,$cover,$title,$content,$article]);
+            $updatePostQuery->execute([$cat,$title,$content,$article]);
             if($updatePostQuery)
                 return $updatePostQuery;
             $this->dbInit->close();
@@ -111,4 +111,13 @@
             } 
             $this->dbInit->close();
         }
+
+        function getPostTitle($article){
+            $titleStmt = "SELECT title FROM articles WHERE article = ?";
+            $titleQuery = $this->dbInit->prepare($titleStmt);
+            $titleQuery->execute([$article]);
+            $oldTitle = $titleQuery->fetch();
+            return $oldTitle['title'];
+        }
+
     }

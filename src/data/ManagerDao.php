@@ -45,11 +45,18 @@
         }
 
         function getSessionInfo($address){
-            $sessionStmt = "SELECT m.manager, m.fname, m.lname, ts.task_desc FROM managers m JOIN tasks ts ON ts.task = m.task WHERE m.email = ? ";
+            $sessionStmt = "SELECT m.manager, m.profile, m.fname, m.lname, ts.task_desc FROM managers m JOIN tasks ts ON ts.task = m.task WHERE m.email = ? ";
             $sessionQuery = $this->dbInit->prepare($sessionStmt);
             $sessionQuery->execute([$address]);
             if($sessionQuery)
                 return $sessionQuery;
+        }
+
+        function getTeams(){
+            $teamStmt = "SELECT m.profile, m.fname, m.lname, ts.task_desc FROM managers m JOIN tasks ts ON ts.task = m.task";
+            $teamQuery = $this->dbInit->query($teamStmt);
+            if($teamQuery)
+                return $teamQuery;
         }
 
 

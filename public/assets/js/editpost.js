@@ -2,24 +2,21 @@ $(document).ready(()=>{
     
     $('#edit-post').submit((e)=>{
         e.preventDefault()
-        let dataArticle = $("#edit-post")[0]
-        let articleForm = new FormData(dataArticle)
-        
-        articleForm.append('cover',$("#cover").prop("files")[0])
-        
+        let dataEdit = $("#edit-post")[0]
+        let editForm = new FormData(dataEdit)
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
+            url:"http://localhost/alphablog/src/controllers/editpost.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,
             contentType: false,
             processData: false,
-            data: articleForm,
+            data: editForm,
+
             success:function(data){
-                console.log(data);
                 let reponse = JSON.parse(data);
                 if (reponse.status === true) {
-                    $("#add-post")[0].reset();
+                    $("#edit-post")[0].reset();
                     Toastify({
                         text: reponse.message,
                         duration: 3000,
@@ -31,6 +28,7 @@ $(document).ready(()=>{
                         background: "linear-gradient(to right, #00b09b, #96c93d)",
                         },
                     }).showToast();
+                    location.reload()
                 } else {
                     Toastify({
                         text: reponse.message,

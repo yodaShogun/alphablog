@@ -25,7 +25,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../../public/assets/css/style.css"></link>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/super-build/ckeditor.js"></script>
 </head>
@@ -39,26 +38,30 @@
         <div>
             <form id="edit-post" enctype='multipart/form-data'  method="POST">
                 <div class="form-group">
-                <label>Category:</label>
-                <select name ="category" id="category" >
-                    <option disabled selected>Select category</option>
-                    <?php while($element = $categoryRows->FETCH(PDO::FETCH_OBJ)) {?>
-                        <option value="<?=$element->category?>"><?=$element->title?></option>
-                    <?php }?>
-                </select>
+                    <label>Category:</label>
+                    <select name ="category" id="category" >
+                        <option disabled selected>Select category</option>
+                        <?php while($element = $categoryRows->FETCH(PDO::FETCH_OBJ)) {?>
+                            <option value="<?=$element->category?>"><?=$element->title?></option>
+                        <?php }?>
+                    </select>
                 </div>
                 <div class="form-group">
-                <label for="name">Title</label>
-                <input type="text" class="form-control" value="<?=$dataPostQuery->getTitle()?>" name="title" id="title" required>
+                    <label for="">Article</label>
+                    <input type="text" hidden class="form-control" value="<?=$_GET['post']?>" name="article" id="article"/>
                 </div>
                 <div class="form-group">
-                <label for="qty">Content</label>
-                <textarea class="form-control" name="content" id="editor" columns="50" rows="50" required><?=$dataPostQuery->getContent()?></textarea>
+                    <label for="name">Title</label>
+                    <input type="text" class="form-control" value="<?=$dataPostQuery->getTitle()?>" name="title" id="title" required>
                 </div>
                 <div class="form-group">
+                    <label for="qty">Content</label>
+                    <textarea class="form-control" name="content" id="editor" columns="50" rows="50" required><?=$dataPostQuery->getContent()?></textarea>
+                </div>
+                <!-- <div class="form-group">
                     <label for="file">Choose Image:</label>
                     <input type="file" class="form-control-file" value="0" name="cover" id="cover" accept=".jpg,.png" required>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Save</button>
                 </div>

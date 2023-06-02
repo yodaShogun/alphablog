@@ -45,7 +45,7 @@
             function getEmail(){
                 return $this->_email;
             }
-    
+
             function getPassword(){
                 return $this->_password;
             } 
@@ -62,7 +62,7 @@
             function setEmail($ml){
                 return $this->_email = $ml;
             }
-    
+
             function setTask($tk){
                 return $this->_task = $tk;
             } 
