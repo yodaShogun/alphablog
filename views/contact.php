@@ -50,7 +50,7 @@
 									<h2>Contact us</h2>
 								</header>
 
-								<form method="post" action="#">
+								<form method="post" action="#" id="contact">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -82,25 +82,25 @@
 									<div class="contact-method">
 										<span class="icon alt fa-envelope"></span>
 										<h3>Email</h3>
-										<a href="#">contact@company.com</a>
+										<a href="#">alphacademyht@gmail.com</a>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-phone"></span>
 										<h3>Phone</h3>
-										<span>+1 333 4040 5566</span>
+										<span>+509 4488 1918</span>
 										<br>
-										<span>+1 333 5550 3366</span>
+										<!-- <span>+1 333 5550 3366</span> -->
 									</div>
 								</section>
-								<section>
+								<!-- <section>
 									<div class="contact-method">
 										<span class="icon alt fa-home"></span>
 										<h3>Address</h3>
 										<span>212 Barrington Court <br> New York, ABC 10001 <br> United States of America</span>
 									</div>
-								</section>
+								</section> -->
 							</section>
 						</div>
 					</section>
