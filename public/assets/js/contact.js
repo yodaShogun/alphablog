@@ -1,8 +1,8 @@
 $(document).ready(()=>{
     
-    $('#contact').submit((e)=>{
+    $('#contact-form').submit((e)=>{
         e.preventDefault()
-        let dataContact = $('#contact')[0]
+        let dataContact = $('#contact-form')[0]
         let formContact = new FormData(dataContact)
 
         $.ajax({
@@ -17,7 +17,7 @@ $(document).ready(()=>{
                 console.log(data);
                 let reponse = JSON.parse(data);
                 if (reponse.status === true) {
-                    $("#contact")[0].reset();
+                    $("#contact-form")[0].reset();
                     Toastify({
                         text: reponse.message,
                         duration: 3000,

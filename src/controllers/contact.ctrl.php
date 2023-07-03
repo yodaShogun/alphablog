@@ -45,8 +45,8 @@
               'allow_self_signed'=>true
             ]
           ];
-          $mailer->setFrom('pierrechriswesley@gmail.com');
-          $mailer->addAddress($person);
+          $mailer->setFrom($person);
+          $mailer->addAddress('pierrechriswesley@gmail.com');
           $mailer->CharSet = 'UTF-8';
           $mailer->Encoding = 'base64';
           $mailer->isHTML(true);

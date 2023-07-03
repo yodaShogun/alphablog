@@ -37,7 +37,6 @@
 										<h1>Contact Us</h1>
 									</header>
 									<span class="image main"><img src="../public/images/map.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 								</div>
 							</section>
 					</div>
@@ -50,7 +49,7 @@
 									<h2>Contact us</h2>
 								</header>
 
-								<form method="post" action="#" id="contact">
+								<form method="post" id="contact-form">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -71,7 +70,7 @@
 
 										<div class="field half text-right">
 											<ul class="actions">
-												<li><input type="submit" value="Send Message" class="primary" /></li>
+												<li><button type="submit"  class="primary" >Send Message</button></li>
 											</ul>
 										</div>
 									</div>
@@ -126,5 +125,6 @@
 
 		<!-- Scripts -->
 		<?php require './includes/script.php' ?>
+		<script src="../public/assets/js/contact.js"></script>
 	</body>
 </html>

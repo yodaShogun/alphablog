@@ -21,10 +21,17 @@
                 return $createSuscriberQuery;
         } 
 
-        function getSuscriber(){
+        function getSuscribers(){
             $readSuscriber = "SELECT * FROM suscribers";
             $readSuscriberQuery = $this->dbInit->query($readSuscriber);
             if($readSuscriberQuery)
                 return $readSuscriberQuery;
+        }
+        function getIdSuscriber($mail){
+            $suscriberStmt = "SELECT suscriber FROM suscriber WHERE mail = ?";
+            $suscriberQuery = $this->dbInit->prepare($suscriberStmt);
+            $suscriberQuery->execute([$mail]);
+            if($suscriberQuery)
+                return $suscriberQuery;
         }
     }

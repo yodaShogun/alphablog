@@ -80,6 +80,16 @@
 									</article>
 								<?php } ?>
 							</section>
+							<section>
+								<div class="inner">
+									<header class="major">
+										<h2>Join Us</h2>
+									</header>
+									<ul class="actions">
+										<li><button class="button next">Suscribe</button></li>
+									</ul>
+								</div>
+							</section>
 					</div>
 
 				<!-- Footer -->
@@ -100,5 +110,6 @@
 
 		<!-- Scripts -->
 		<?php  require './includes/script.php' ?>
+		<script src="../public/assets/js/notify.js"></script>
 	</body>
 </html>

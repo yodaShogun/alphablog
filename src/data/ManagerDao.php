@@ -14,9 +14,9 @@
         }
 
         function createManager(Manager $manager){
-            $createStmt = "INSERT INTO managers(`manager`, `profile`,`task`,`fname`, `lname`, `email`, `pswd`) VALUES (?,?,?,?,?,?,?)";
+            $createStmt = "INSERT INTO managers(`manager`, `profile`,`task`,`fname`, `lname`, `email`, position ,`pswd`) VALUES (?,?,?,?,?,?,?,?)";
             $createQuery = $this->dbInit->prepare($createStmt);
-            $createQuery->execute([$manager->getNo(),$manager->getProfile(),$manager->getTask(),$manager->getFname(), $manager->getLname(),$manager->getEmail(),$manager->getPassword()]);
+            $createQuery->execute([$manager->getNo(),$manager->getProfile(),$manager->getTask(),$manager->getFname(), $manager->getLname(),$manager->getEmail(),$manager->getPosition(),$manager->getPassword()]);
             if($createQuery) return $createQuery;
         } 
 
@@ -53,7 +53,7 @@
         }
 
         function getTeams(){
-            $teamStmt = "SELECT m.profile, m.fname, m.lname, ts.task_desc FROM managers m JOIN tasks ts ON ts.task = m.task";
+            $teamStmt = "SELECT m.profile, m.fname, m.lname, m.position FROM managers m JOIN tasks ts ON ts.task = m.task";
             $teamQuery = $this->dbInit->query($teamStmt);
             if($teamQuery)
                 return $teamQuery;

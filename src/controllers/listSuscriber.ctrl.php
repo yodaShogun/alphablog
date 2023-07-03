@@ -4,7 +4,7 @@
     use src\data\SuscriberDao;
     $response = [];
     $daoSuscriber = new SuscriberDao();
-    $suscriberQuery = $daoSuscriber->getSuscriber();
+    $suscriberQuery = $daoSuscriber->getSuscribers();
     
     while($data = $suscriberQuery->FETCH(PDO::FETCH_OBJ)){
         $response[] = $data;

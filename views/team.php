@@ -51,7 +51,7 @@
 
 												<h3><?=$teams->fname?><?=$teams->lname?></h3>
 
-												<h4><em><?=$teams->task_desc?></em></h4>
+												<h4><em><?=$teams->position?></em></h4>
 
 											</div>
 										<?php }?>

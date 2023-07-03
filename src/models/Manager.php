@@ -8,16 +8,18 @@
             private $_task;
             private $_fname;
             private $_lname;
-            private $_email; 
+            private $_email;
+            private $_position;
             private $_password;
 
-            function __construct($n,$prf,$tk,$fn,$ln,$ml,$pwd){
+            function __construct($n,$prf,$tk,$fn,$ln,$ml,$ps,$pwd){
                 $this->_no = $n;
                 $this->profile = $prf;
                 $this->_task = $tk; 
                 $this->_fname = $fn;
                 $this->_lname = $ln;
                 $this->_email = $ml;
+                $this->_position = $ps;
                 $this->_password = $pwd;
             } 
     
@@ -44,6 +46,10 @@
 
             function getEmail(){
                 return $this->_email;
+            }
+
+            function getPosition(){
+                return $this->_position;
             }
 
             function getPassword(){
