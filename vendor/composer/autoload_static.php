@@ -22,6 +22,16 @@ class ComposerStaticInit9a3534b8cefb288cfeb5224876a8e57b
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'src\\config\\Instance' => __DIR__ . '/../..' . '/src/config/Instance.php',
+        'src\\config\\Mysql' => __DIR__ . '/../..' . '/src/config/Mysql.php',
+        'src\\data\\CategoryDao' => __DIR__ . '/../..' . '/src/data/CategoryDao.php',
+        'src\\data\\ManagerDao' => __DIR__ . '/../..' . '/src/data/ManagerDao.php',
+        'src\\data\\PostDao' => __DIR__ . '/../..' . '/src/data/PostDao.php',
+        'src\\data\\SuscriberDao' => __DIR__ . '/../..' . '/src/data/SuscriberDao.php',
+        'src\\models\\Category' => __DIR__ . '/../..' . '/src/models/Category.php',
+        'src\\models\\Manager' => __DIR__ . '/../..' . '/src/models/Manager.php',
+        'src\\models\\Post' => __DIR__ . '/../..' . '/src/models/Post.php',
+        'src\\models\\Suscriber' => __DIR__ . '/../..' . '/src/models/Suscriber.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

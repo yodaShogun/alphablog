@@ -7,4 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'src\\config\\Instance' => $baseDir . '/src/config/Instance.php',
+    'src\\config\\Mysql' => $baseDir . '/src/config/Mysql.php',
+    'src\\data\\CategoryDao' => $baseDir . '/src/data/CategoryDao.php',
+    'src\\data\\ManagerDao' => $baseDir . '/src/data/ManagerDao.php',
+    'src\\data\\PostDao' => $baseDir . '/src/data/PostDao.php',
+    'src\\data\\SuscriberDao' => $baseDir . '/src/data/SuscriberDao.php',
+    'src\\models\\Category' => $baseDir . '/src/models/Category.php',
+    'src\\models\\Manager' => $baseDir . '/src/models/Manager.php',
+    'src\\models\\Post' => $baseDir . '/src/models/Post.php',
+    'src\\models\\Suscriber' => $baseDir . '/src/models/Suscriber.php',
 );
