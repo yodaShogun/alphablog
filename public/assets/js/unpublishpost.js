@@ -14,7 +14,7 @@ $(document).ready(() => {
 			{
 				$.ajax(
 				{
-					url: 'http://localhost/alphablog/src/controllers/unpublish.ctrl.php',
+					url: 'https://alpha-academy.eksponansyel.com/src/controllers/unpublish.ctrl.php',
 					type: "POST",
 					dataType: 'json',
 					data: { data:data },

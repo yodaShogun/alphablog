@@ -5,7 +5,7 @@ $(document).ready(()=>{
         let dataEdit = $("#edit-post")[0]
         let editForm = new FormData(dataEdit)
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/editpost.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/editpost.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,

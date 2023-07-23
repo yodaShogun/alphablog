@@ -1,4 +1,4 @@
 <?php
     if(isset($_SESSION['user']))
-        header('location: http://localhost/alphablog/views/admin/');
+        header('location: https://alpha-academy.eksponansyel.com/views/admin/');
 ?>

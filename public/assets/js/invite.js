@@ -5,7 +5,7 @@ $(document).ready(()=>{
         let dataArticle = $("#members")[0]
         let articleForm = new FormData(dataArticle)
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/invite.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/invite.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,

@@ -8,8 +8,8 @@
     $timeDecoded = urldecode(base64_decode($_GET['time']));
     $currentTime = date("Y-m-d H:i:s");
 
-    if(!isset($_GET['job']))
-        header('location: https://google.com')
+    // if(!isset($_GET['job']))
+    //     header('location: https://google.com')
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,6 +49,10 @@
                                     <div class="form-group">
                                         <label for="email"><i class="zmdi zmdi-email"></i></label>
                                         <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postion"><i class="zmdi zmdi-account"></i></label>
+                                        <input type="postion" name="postion" id="postion" placeholder="Your postion" required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>

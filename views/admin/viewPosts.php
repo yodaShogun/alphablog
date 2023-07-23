@@ -45,7 +45,7 @@
                 <td><img src="../../public/uploads/blog/<?=$data->title?>/<?=$data->cover?>" alt="" class="w-25 img-fluid img-thumbnail"/></td>
                 <td><?=$data->title?></td>
                 <td>
-                  <a href="http://localhost/alphablog/views/admin/editpost.php?post=<?=$data->article?>"><i style='color: #53D46B;' class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                  <a href="https://alpha-academy.eksponansyel.com/views/admin/editpost.php?post=<?=$data->article?>"><i style='color: #53D46B;' class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                   &nbsp;&nbsp;
                   <?=!$data->actived? "<a class='publish' href='$data->article' title='Enabled'><i style='color: #5DA0CD;' class='fa fa-upload'></i></a>&nbsp;" : ''; ?>
                   <?= $data->actived? "<a class='unpublish' href='$data->article' title='Disabled'><i style='color: #ff0000;' class='fa fa-undo'></i></a>&nbsp;" : ''; ?>
@@ -57,7 +57,7 @@
 
         <!-- Trigger a new page -->
         <button type="button" class="btn btn-secondary " style="height:40px">
-          <a class="text-white" href="http://localhost/alphablog/views/admin/createPost.php" target="_blank">Create Article</a>
+          <a class="text-white" href="https://alpha-academy.eksponansyel.com/views/admin/createPost.php" target="_blank">Create Article</a>
         </button>
 
       </div>

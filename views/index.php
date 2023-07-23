@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../public/assets/css/main.css"> 
 		<noscript><link rel="stylesheet" href="../public/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<title>AlphaAcademyHT</title>
 	</head>
 	<body class="is-preload">
@@ -86,11 +88,45 @@
 										<h2>Join Us</h2>
 									</header>
 									<ul class="actions">
-										<li><button class="button next">Suscribe</button></li>
+										<li><button class="button next" data-toggle="modal" data-target="#modalSubscriptionForm">Suscribe</button></li>
 									</ul>
 								</div>
 							</section>
 					</div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header text-center">
+									<h4 class="modal-title w-100 font-weight-bold">Subscription</h4>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body mx-3">
+									<form method="post" id="add-sub">
+										<div class="md-form mb-5">
+											<i class="fas fa-user prefix grey-text"></i>
+											<input type="text" name="form3" id="form3" class="form-control validate">
+											<label data-error="wrong" data-success="right" for="form3">Your name</label>
+										</div>
+
+										<div class="md-form mb-4">
+											<i class="fas fa-envelope prefix grey-text"></i>
+											<input type="email" name="form2" id="form2" class="form-control validate">
+											<label data-error="wrong" data-success="right" for="form2">Your email</label>
+										</div>
+
+										<div class="modal-footer d-flex justify-content-center">
+											<button type="submit" class="btn btn-indigo">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Modal -->
 
 				<!-- Footer -->
 				<footer id="footer">
@@ -111,5 +147,7 @@
 		<!-- Scripts -->
 		<?php  require './includes/script.php' ?>
 		<script src="../public/assets/js/notify.js"></script>
+		<script src="../public/assets/js/addsub.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 	</body>
 </html>

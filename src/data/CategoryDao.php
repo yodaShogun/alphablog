@@ -19,7 +19,6 @@
             $createCategoryQuery->execute([$cat->getNo(),$cat->getDesc()]);
             if($createCategoryQuery)
                 return $createCategoryQuery;
-            $this->dbInit->close();
         } 
 
         function countCategory(){
@@ -27,8 +26,7 @@
             $countQuery = $this->dbInit->query($countStmt);
             while($countQueryResult = $countQuery->fetch()){
                 return $countQueryResult['cats'];
-            } 
-            $this->dbInit->close();   
+            }    
         }
 
         function listCategory(){
@@ -36,7 +34,6 @@
             $readCategoryQuery = $this->dbInit->query($readCategoryStmt);
             if($readCategoryQuery)
                 return $readCategoryQuery;
-            $this->dbInit->close();
         } 
 
         function updateCategory($name,$id){
@@ -45,7 +42,6 @@
             $updateCategoryQuery->execute([$name, $id]);
             if($updateCategoryQuery)
                 return $updateCategoryQuery;
-            $this->dbInit->close();
         } 
     
     } 

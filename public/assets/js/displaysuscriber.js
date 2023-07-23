@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $("#list").DataTable({
 		"ajax":{
-			"url": "http://localhost/alphablog/src/controllers/listSuscriber.ctrl.php",
+			"url": "https://alpha-academy.eksponansyel.com/src/controllers/listSuscriber.ctrl.php",
 			"dataSrc": '',
 		},	
 		"columns":[

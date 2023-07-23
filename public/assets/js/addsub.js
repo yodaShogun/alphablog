@@ -1,12 +1,13 @@
 $(document).ready(()=>{
     
-    $('#add-cat').submit((e)=>{
+    $('#add-sub').submit((e)=>{
+        
         e.preventDefault()
-        let dataCategory = $('#add-cat')[0]
+        let dataCategory = $('#add-sub')[0]
         let formCategory = new FormData(dataCategory)
 
         $.ajax({
-            url:"https://alpha-academy.eksponansyel.com/src/controllers/addcat.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/addsub.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,
@@ -17,7 +18,7 @@ $(document).ready(()=>{
                 console.log(data);
                 let reponse = JSON.parse(data);
                 if (reponse.status === true) {
-                    $("#add-cat")[0].reset();
+                    $("#add-sub")[0].reset();
                     Toastify({
                         text: reponse.message,
                         duration: 3000,

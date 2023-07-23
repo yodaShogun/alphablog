@@ -5,7 +5,7 @@ $(document).ready(()=>{
         let dataLogin = $("#granted")[0]
         let loginForm = new FormData(dataLogin)
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/loginUser.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/loginUser.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,
@@ -28,7 +28,7 @@ $(document).ready(()=>{
                         background: "linear-gradient(to right, #00b09b, #96c93d)",
                         },
                     }).showToast();
-                    window.location.replace("http://localhost/alphablog/views/admin")
+                    window.location.replace("https://alpha-academy.eksponansyel.com/views/admin")
                 } else {
                     Toastify({
                         text: reponse.message,

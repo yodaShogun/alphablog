@@ -7,7 +7,7 @@ $(document).ready(()=>{
         articleForm.append('cover',$("#cover").prop("files")[0])
         
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/addpost.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/addpost.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,

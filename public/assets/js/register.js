@@ -7,7 +7,7 @@ $(document).ready(()=>{
         registrationForm.append('profile',$("#profile").prop("files")[0])
         
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/userRegistration.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/userRegistration.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,

@@ -6,7 +6,7 @@ $(document).ready(()=>{
         let formContact = new FormData(dataContact)
 
         $.ajax({
-            url:"http://localhost/alphablog/src/controllers/contact.ctrl.php",
+            url:"https://alpha-academy.eksponansyel.com/src/controllers/contact.ctrl.php",
             type:"POST",
             dataType: "script",
             cache: false,

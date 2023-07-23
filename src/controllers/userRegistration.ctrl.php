@@ -16,6 +16,7 @@
         $task = (int) htmlspecialchars($task);
         $name = explode(' ',htmlspecialchars($name));
         $email = htmlspecialchars($email);
+        $postion = htmlspecialchars($postion);
         $pass = htmlspecialchars($pass);
         $re_pass = htmlspecialchars($re_pass);
         if(filter_var($email,FILTER_VALIDATE_EMAIL)){
@@ -25,7 +26,7 @@
                         mkdir($directory,0777,true);
                         if(isset($_FILES['profile'])){
                             $profile = fileImages($directory,$_FILES['profile']);
-                            $newManager =  new Manager(null,$profile,$task,$name[0],$name[1],$email,password_hash($pass,PASSWORD_DEFAULT));
+                            $newManager =  new Manager(null,$profile,$task,$name[0],$name[1],$email,$position,password_hash($pass,PASSWORD_DEFAULT));
                             if($registerInstance->createManager($newManager))
                                 $response = ['status'=>true,"message"=>'Registration Succesfull'];
                             else
